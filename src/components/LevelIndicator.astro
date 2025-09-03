@@ -1,0 +1,42 @@
+---
+const { label, percentage = 0 } = Astro.props;
+---
+
+<div class="root">
+  <div class="label-container">
+    <span>{label}</span>
+  </div>
+  <div class="bar">
+    <div class="progress-bar" style={`width: ${Math.min(percentage, 100)}%`}>
+    </div>
+  </div>
+</div>
+
+<style>
+  .root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .label-container {
+    width: 30%;
+  }
+  span {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .bar {
+    flex: 1;
+    background: rgb(var(--gray-light));
+    border-radius: 6px;
+    height: 16px;
+    position: relative;
+  }
+  .progress-bar {
+    background: linear-gradient(90deg, #4f8cff, #38e1ad);
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.4s;
+  }
+</style>

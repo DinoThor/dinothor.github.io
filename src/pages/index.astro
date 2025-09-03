@@ -1,0 +1,128 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import LevelIndicator from "../components/LevelIndicator.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="two-cols">
+				<div class="col left-col">
+					<h1>Aarón Raya</h1>
+					<h2>Software developer</h2>
+
+					<p>Bla bla bla bla</p>
+				</div>
+
+				<div class="col right-col">
+					<div class="square"></div>
+				</div>
+			</div>
+
+			<div class="col center">
+				<h2>Background</h2>
+
+				<div class="three-cols">
+					<div class="ranking">
+						<h3>FrontEnd</h3>
+						<div style="width: 100%">
+							<LevelIndicator label="React Native" percentage={80} />
+							<LevelIndicator label="TypeScript" percentage={80} />
+							<LevelIndicator label="ReactJS" percentage={60} />
+							
+							
+
+						</div>
+					</div>
+					<div class="ranking">
+						<h3>BackEnd</h3>
+						<div style="width: 100%">
+							<LevelIndicator label="Python" percentage={80} />
+							<LevelIndicator label="Java" percentage={70} />
+						</div>
+					</div>
+					<div class="ranking">
+						<h3>Cloud</h3>
+						<div style="width: 100%">
+							<LevelIndicator label="AWS" percentage={80} />
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</main>
+		<Footer />
+	</body><style>
+		h1 {
+			font-size: 30px;
+		}
+
+		h2 {
+			font-size: 20px;
+		}
+
+		.col {
+			border-radius: 20px;
+			border-width: 1.5px;
+			border-style: solid;
+			border-color: rgb(var(--black), 40%);
+			box-shadow: 4px 5px 0px rgba(var(--black), 40%);
+
+			padding: 1rem;
+		}
+	
+		.center {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.ranking {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+			border-width: 1.5px;
+			border-style: solid;
+			border-color: rgb(0,0,0, 40%);
+			border-radius: 30px;
+		}
+
+		.two-cols {
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			gap: 1rem;
+		}
+
+		.three-cols {
+			display: grid;
+			width: 100%;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.left-col {
+		}
+
+		.right-col {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.square {
+			background-color: red;
+			height: 100px;
+			width: 100px;
+		}
+	</style>
+</html>
